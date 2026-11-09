@@ -1,0 +1,998 @@
+
+/* ODDROOM — warna intinya ini */
+:root {
+    --cream: #F5EBD7;
+    --green: #244C3A;
+    --yellow: #F2C94C;
+    --pink: #F28C8C;
+    --blue: #8BB8D9;
+    --black: #171714;
+}
+
+/* setup */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--black);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 30px 6%;
+}
+
+/* main*/
+h1 {
+    background-color: var(--green);
+    color: var(--cream);
+    display: inline-block;
+    padding: 14px 22px;
+    border: 3px solid var(--black);
+    box-shadow: 6px 6px 0 var(--black);
+    font-size: 36px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+}
+
+/* cards nya */
+.studio-card {
+    background-color: #FFF9ED;
+    border: 3px solid var(--black);
+    box-shadow: 7px 7px 0 var(--black);
+    padding: 18px;
+    margin-bottom: 28px;
+    max-width: 430px;
+}
+
+.studio-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border: 2px solid var(--black);
+    display: block;
+    margin-bottom: 16px;
+}
+
+.studio-card h3 {
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+    line-height: 1.1;
+}
+
+.studio-card p {
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+.studio-card .price {
+    display: inline-block;
+    background-color: var(--yellow);
+    border: 2px solid var(--black);
+    padding: 8px 12px;
+    font-weight: 900;
+    font-size: 14px;
+    margin-top: 8px;
+    box-shadow: 3px 3px 0 var(--black);
+}
+
+
+/* Layout tiga kartu studio */
+.studio-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    align-items: stretch;
+}
+
+.studio-card {
+    max-width: none;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+/*interakitfnya ddisini*/
+@media (max-width: 900px) {
+    .studio-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 24px 5%;
+    }
+
+    .studio-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* NAVBARRRRR */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding: 0 0 22px;
+    margin-bottom: 48px;
+    border-bottom: 3px solid var(--black);
+}
+
+
+.brand {
+    color: var(--black);
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.brand span {
+    font-size: 12px;
+    vertical-align: top;
+    margin-left: 2px;
+}
+
+
+.brand span {
+    font-size: 12px;
+    vertical-align: top;
+}
+
+
+
+.nav-links a {
+    color: var(--black);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+.nav-links a {
+    color: var(--black);
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+
+.nav-links .nav-login {
+    background: var(--yellow);
+    border: 2px solid var(--black);
+    padding: 10px 14px;
+    box-shadow: 3px 3px 0 var(--black);
+}
+
+/* head nya*/
+
+.page-heading {
+    margin-bottom: 44px;
+    max-width: 900px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+}
+
+
+.page-heading h1 {
+    margin-bottom: 22px;
+    font-size: clamp(42px, 7vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -3px;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: 3px solid var(--black);
+    box-shadow: 8px 8px 0 var(--black);
+}
+
+.page-heading h1 span {
+    color: var(--yellow);
+}
+
+.subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 500;
+    max-width: 520px;
+}
+
+
+@media (max-width: 600px) {
+    .navbar {
+        margin-bottom: 32px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+}
+
+/* bagian detail studionya */
+
+.studio-detail {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.studio-detail h1 {
+    margin-bottom: 28px;
+}
+
+
+.studio-detail img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border: 3px solid var(--black);
+    box-shadow: 8px 8px 0 var(--black);
+    margin-bottom: 32px;
+}
+
+.studio-detail > p {
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.studio-detail .price {
+    display: inline-block;
+    background: var(--yellow);
+    border: 2px solid var(--black);
+    padding: 10px 14px;
+    font-weight: bold;
+}
+
+.detail-note {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--black);
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.view-studio {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--green);
+    color: var(--cream);
+    border: 2px solid var(--black);
+    box-shadow: 4px 4px 0 var(--black);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.view-studio:hover {
+    background: var(--pink);
+    color: var(--black);
+}
+
+/* view button disinii*/
+.view-studio {
+    display: inline-block;
+    padding: 10px 14px;
+    background-color: var(--blue);
+    color: var(--black);
+    border: 2px solid var(--black);
+    box-shadow: 4px 4px 0 var(--black);
+    font-size: 12px;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+.view-studio:hover {
+    background-color: var(--pink);
+    box-shadow: 2px 2px 0 var(--black);
+    transform: translate(2px, 2px);
+}
+
+/* layout studio card nya*/
+.studio-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    padding: 20px;
+    background-color: #FFF9ED;
+    border: 3px solid var(--black);
+    box-shadow: 7px 7px 0 var(--black);
+}
+
+.studio-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border: 2px solid var(--black);
+    margin-bottom: 18px;
+}
+
+.studio-card p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.studio-card .price {
+    margin-top: auto;
+    margin-bottom: 14px;
+}
+
+/* STUDIO GRID SPACING */
+.studio-container {
+    gap: 32px;
+    align-items: stretch;
+}
+
+.studio-card h3 {
+    overflow-wrap: anywhere;
+}
+
+.studio-card .view-studio {
+    margin-top: 0;
+}
+/* detail studio /*
+
+/* STUDIO DETAIL — TYPOGRAPHY */
+.studio-detail h1 {
+    font-size: clamp(38px, 6vw, 72px);
+    line-height: 1;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+}
+
+.studio-detail .detail-note {
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.studio-detail .back-link {
+    font-size: 12px;
+    font-weight: 900;
+    text-decoration-thickness: 3px;
+}
+
+/* BOOK THIS ROOM BUTTON */
+.book-room-button {
+    display: inline-block;
+    margin: 8px 8px 20px 0;
+    padding: 15px 20px;
+    background-color: var(--green);
+    color: var(--cream);
+    border: 3px solid var(--black);
+    box-shadow: 6px 6px 0 var(--black);
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.book-room-button:hover {
+    background-color: var(--yellow);
+    color: var(--black);
+    box-shadow: 3px 3px 0 var(--black);
+    transform: translate(3px, 3px);
+}
+
+/* BOOKING FORM */
+.booking-form {
+    margin-top: 40px;
+    padding: 24px;
+    background: #FFF9ED;
+    border: 3px solid var(--black);
+    box-shadow: 7px 7px 0 var(--black);
+}
+
+.booking-form h2 {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.booking-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.booking-form input[type="date"] {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    padding: 14px;
+    margin-bottom: 24px;
+    background: var(--cream);
+    border: 2px solid var(--black);
+    font: inherit;
+}
+
+.booking-form button {
+    font-family: inherit;
+    cursor: pointer;
+}
+/* slot waktu */
+.slot-heading {
+    display: block;
+    margin: 12px 0 14px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.time-slot {
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+}
+
+.time-slot input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.time-slot span {
+    display: block;
+    padding: 16px 8px;
+    background: var(--cream);
+    border: 2px solid var(--black);
+    box-shadow: 3px 3px 0 var(--black);
+    text-align: center;
+    font-size: 13px;
+    font-weight: 900;
+    transition: 0.2s ease;
+}
+
+.time-slot input:checked + span {
+    background: var(--green);
+    color: var(--cream);
+    box-shadow: 1px 1px 0 var(--black);
+    transform: translate(2px, 2px);
+}
+
+.time-slot input:focus-visible + span {
+    outline: 3px solid var(--blue);
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    .time-slots {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* BOOKING SUMMARY */
+.booking-summary {
+    margin-top: 28px;
+    padding: 22px;
+    background: var(--yellow);
+    border: 3px solid var(--black);
+    box-shadow: 6px 6px 0 var(--black);
+}
+
+.booking-summary h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.booking-summary p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.booking-summary .summary-total {
+    padding-top: 14px;
+    border-top: 2px solid var(--black);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+/* =====================================
+   ODDROOM — CUSTOMER PAYMENT PAGE
+===================================== */
+
+.payment-page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+
+.payment-heading {
+    max-width: 750px;
+    margin-bottom: 55px;
+}
+
+.payment-eyebrow {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.payment-heading h1 {
+    display: inline-block;
+    margin-bottom: 24px;
+    padding: 16px 22px;
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -3px;
+    font-weight: 900;
+    border: 3px solid var(--black);
+    box-shadow: 8px 8px 0 var(--black);
+}
+
+.payment-heading h1 span {
+    color: var(--yellow);
+}
+
+.payment-subtitle {
+    max-width: 470px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* ERROR */
+
+.payment-errors {
+    margin-bottom: 30px;
+    padding: 18px 22px;
+    background: var(--pink);
+    border: 3px solid var(--black);
+    box-shadow: 5px 5px 0 var(--black);
+    font-weight: 700;
+}
+
+.payment-errors p + p {
+    margin-top: 8px;
+}
+
+
+/* MAIN GRID */
+
+.payment-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+
+/* CARD HEADINGS */
+
+.payment-card-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 16px;
+    margin-bottom: 22px;
+    border-bottom: 3px solid var(--black);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+
+/* BOOKING SUMMARY */
+
+.payment-summary {
+    padding: 26px;
+    background: var(--yellow);
+    border: 3px solid var(--black);
+    box-shadow: 8px 8px 0 var(--black);
+}
+
+.booking-id {
+    padding: 20px;
+    margin-bottom: 26px;
+    background: var(--cream);
+    border: 2px solid var(--black);
+}
+
+.booking-id p {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.booking-id h2 {
+    font-size: 34px;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.summary-details {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.summary-item > span {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.summary-item > strong {
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.summary-time {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.summary-time span {
+    padding: 9px 12px;
+    background: var(--cream);
+    border: 2px solid var(--black);
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.summary-total {
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 3px solid var(--black);
+}
+
+.summary-total > span {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.summary-total h2 {
+    margin: 12px 0 0;
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+.summary-note {
+    margin-top: 24px;
+    padding: 12px;
+    background: var(--black);
+    color: var(--cream);
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+
+/* PAYMENT CONTENT */
+
+.payment-content {
+    min-width: 0;
+    padding: 26px;
+    background: #FFF9ED;
+    border: 3px solid var(--black);
+    box-shadow: 8px 8px 0 var(--black);
+}
+
+
+/* PAYMENT INSTRUCTIONS */
+
+.payment-instructions {
+    padding: 20px;
+    margin-bottom: 20px;
+    background: var(--blue);
+    border: 2px solid var(--black);
+}
+
+.instruction-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.instruction-number {
+    font-size: 25px;
+}
+
+.payment-instructions p {
+    margin: 15px 0 20px;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.whatsapp-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 16px;
+    background: var(--green);
+    color: var(--cream);
+    border: 2px solid var(--black);
+    box-shadow: 4px 4px 0 var(--black);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    transition: 0.2s ease;
+}
+
+.whatsapp-button:hover {
+    background: var(--yellow);
+    color: var(--black);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--black);
+}
+
+
+/* VERIFICATION NOTICE */
+
+.verification-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px;
+    margin-bottom: 28px;
+    background: #FFF0C2;
+    border: 2px solid var(--black);
+}
+
+.verification-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--yellow);
+    border: 2px solid var(--black);
+    font-weight: 900;
+}
+
+.verification-note strong {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.verification-note p {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* PAYMENT FORM */
+
+.form-section-heading {
+    padding-bottom: 15px;
+    margin-bottom: 22px;
+    border-bottom: 3px solid var(--black);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.payment-form > label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.payment-form select {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 24px;
+    background: var(--cream);
+    border: 2px solid var(--black);
+    border-radius: 0;
+    color: var(--black);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* CUSTOM FILE UPLOAD */
+
+.proof-upload {
+    position: relative;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 190px;
+    padding: 24px;
+    margin-bottom: 24px;
+    background: var(--cream);
+    border: 2px dashed var(--black);
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.proof-upload:hover {
+    background: #F2E0B8;
+}
+
+.proof-upload input[type="file"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: var(--yellow);
+    border: 2px solid var(--black);
+    box-shadow: 3px 3px 0 var(--black);
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.proof-upload strong {
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.upload-description {
+    font-size: 12px;
+}
+
+.upload-filename {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    color: #666;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.upload-filename.file-selected {
+    color: var(--green);
+    font-weight: 900;
+}
+
+
+/* SUBMIT BUTTON */
+
+.payment-submit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 17px 20px;
+    background: var(--green);
+    color: var(--cream);
+    border: 3px solid var(--black);
+    box-shadow: 6px 6px 0 var(--black);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.payment-submit:hover {
+    background: var(--yellow);
+    color: var(--black);
+    transform: translate(3px, 3px);
+    box-shadow: 3px 3px 0 var(--black);
+}
+
+
+/* FOOTER */
+
+.payment-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 55px;
+    padding-top: 20px;
+    border-top: 3px solid var(--black);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .payment-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .payment-summary,
+    .payment-content {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+    .payment-heading {
+        margin-bottom: 38px;
+    }
+
+    .payment-heading h1 {
+        font-size: 42px;
+        padding: 13px;
+    }
+
+    .payment-card-heading {
+        font-size: 9px;
+    }
+
+    .payment-footer {
+        flex-direction: column;
+    }
+}
