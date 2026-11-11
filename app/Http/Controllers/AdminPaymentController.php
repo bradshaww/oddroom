@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\DB;
 
 class AdminPaymentController extends Controller
 {
-    // Menampilkan daftar pembayaran customer
     public function index()
     {
         $payments = DB::table('payments')
@@ -26,19 +25,16 @@ class AdminPaymentController extends Controller
         return view('admin.payments.index', compact('payments'));
     }
 
-    // Menyetujui pembayaran
     public function approve($payment_id)
     {
         return $this->processPayment($payment_id, 'approved');
     }
 
-    // Menolak pembayaran
     public function reject($payment_id)
     {
         return $this->processPayment($payment_id, 'rejected');
     }
 
-    // Memproses keputusan admin
     private function processPayment($payment_id, $decision)
     {
         $result = DB::transaction(function () use ($payment_id, $decision) {
@@ -51,7 +47,6 @@ class AdminPaymentController extends Controller
                 return 'not_found';
             }
 
-            // Hanya pembayaran yang masih menunggu yang dapat diproses
             if ($payment->status !== 'waiting') {
                 return 'already_processed';
             }

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <style>
-        /* BRAND LOGO */
         .brand {
             display: flex;
             flex-direction: column;
@@ -31,11 +30,15 @@
             letter-spacing: 2px;
         }
 
-        /* NAVBAR SPACING */
         .nav-links {
             display: flex;
             align-items: center;
             gap: 32px;
+        }
+
+        /* LOGOUT BUTTON */
+        .nav-links form .nav-login {
+            font-weight: 700;
         }
     </style>
 </head>

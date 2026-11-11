@@ -34,7 +34,6 @@
 
         .layout { min-height: 100vh; }
 
-        /* SIDEBAR - SAME STYLE AS STUDIO MANAGEMENT */
         .sidebar {
             position: fixed;
             inset: 0 auto 0 0;
@@ -168,7 +167,6 @@
             border-color: var(--black);
         }
 
-        /* MAIN CONTENT */
         .main {
             min-width: 0;
             margin-left: 235px;
@@ -243,7 +241,6 @@
             font-weight: 900;
         }
 
-        /* STAT CARDS */
         .stats {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -299,7 +296,6 @@
             font-weight: 900;
         }
 
-        /* LOWER SECTION */
         .section-title {
             display: flex;
             align-items: center;
@@ -454,7 +450,6 @@
             letter-spacing: .7px;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 1100px) {
             .sidebar { width: 235px; padding: 25px 15px; }
             .main { margin-left: 235px; padding: 28px 24px; }

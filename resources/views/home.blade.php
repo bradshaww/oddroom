@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ODDROOM — Your Space. Your Sound.</title>
-
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <style>
@@ -19,6 +18,10 @@
             --black: #171714;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         html {
             scroll-behavior: smooth;
             background: var(--cream);
@@ -26,14 +29,25 @@
 
         body {
             margin: 0;
+            padding: 0;
             background: var(--cream);
-            color: var(--black);
+            color: var(--green);
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
         }
 
-        /* NAVBAR & BRAND */
+        /* NAVBAR */
 
         .navbar {
-            background: var(--cream);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            width: 100%;
+            padding: 20px 8%;
+            margin: 0;
+            background: var(--blue);
             border-bottom: 2px solid var(--black);
         }
 
@@ -62,7 +76,46 @@
             line-height: 1;
         }
 
-        /* HERO */
+        .navbar .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 12px 18px;
+        }
+
+        .navbar .nav-links a {
+            color: var(--black);
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .navbar .nav-links a:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+        }
+
+        .navbar .nav-links form {
+            margin: 0;
+        }
+
+        .navbar .nav-links .nav-login {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--black);
+            border: 2px solid var(--black);
+            padding: 10px 14px;
+            box-shadow: 3px 3px 0 var(--black);
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 900;
+            cursor: pointer;
+        }
+
 
         .home-hero {
             min-height: 68vh;
@@ -78,21 +131,39 @@
         }
 
         .home-hero h1 {
+            display: block !important;
+            width: fit-content;
+            max-width: 100%;
+            background: transparent !important;
+            background-color: transparent !important;
+            color: var(--black) !important;
+            padding: 0 !important;
+            border: 0 !important;
+            box-shadow: none !important;
+
             font-size: clamp(58px, 9vw, 118px);
             line-height: 0.88;
             margin: 18px 0;
             letter-spacing: -5px;
             position: relative;
             z-index: 1;
-            text-shadow: 3px 3px 0 rgba(23, 23, 20, 0.08);
+            text-shadow: 3px 3px 0 rgba(116, 116, 71, 0.08);
+            text-transform: uppercase;
         }
 
         .home-hero h1 span {
-            color: var(--green);
+            color: var(--pink) !important;
+        }
+
+        .home-hero .eyebrow {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
         }
 
         .home-hero .subtitle {
-            font-size: 15px;
+            font-size: 20px;
             line-height: 1.7;
             margin: 16px 0 25px;
         }
@@ -114,9 +185,30 @@
             font-weight: 900;
             font-size: 18px;
             transform: rotate(12deg);
+            z-index: 2;
         }
 
-        /* GENERAL SECTION */
+        .home-hero .view-studio {
+            display: inline-block;
+            padding: 10px 14px;
+            background: var(--blue);
+            color: var(--black);
+            border: 2px solid var(--black);
+            box-shadow: 4px 4px 0 var(--black);
+            font-size: 12px;
+            font-weight: 900;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.2s ease;
+        }
+
+        .home-hero .view-studio:hover {
+            background: var(--pink);
+            box-shadow: 2px 2px 0 var(--black);
+            transform: translate(2px, 2px);
+        }
+
+    
 
         .home-section {
             padding: 65px 8%;
@@ -137,104 +229,17 @@
             letter-spacing: -2.5px;
         }
 
-        .section-heading p {
+        .section-heading > p {
             max-width: 280px;
             line-height: 1.6;
             font-size: 14px;
         }
 
         .eyebrow {
-            font-size: 11px;
-            font-weight: 900;
+            font-size: 22px;
+            font-weight: 800;
             letter-spacing: 2px;
         }
-
-        /* FEATURED STUDIOS */
-
-        .featured-section {
-            background: var(--green);
-            color: var(--cream);
-            border-bottom: 2px solid var(--black);
-        }
-
-        .featured-section .section-heading h2 span {
-            color: var(--yellow);
-        }
-
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
-
-        .featured-card {
-            color: var(--black);
-            text-decoration: none;
-            background: var(--cream);
-            border: 2px solid var(--black);
-            box-shadow: 5px 5px 0 var(--black);
-            transition: 0.2s ease;
-            min-width: 0;
-        }
-
-        .featured-card:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 8px 8px 0 var(--black);
-        }
-
-        .featured-art {
-            min-height: 185px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-bottom: 2px solid var(--black);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .featured-art span {
-            font-size: clamp(32px, 4.5vw, 54px);
-            font-weight: 1000;
-            letter-spacing: -3px;
-            transform: rotate(-8deg);
-            text-shadow: 2px 2px 0 rgba(23, 23, 20, 0.12);
-        }
-
-        .art-band {
-            background: var(--pink);
-        }
-
-        .art-loop {
-            background: var(--yellow);
-        }
-
-        .art-beat {
-            background: var(--blue);
-        }
-
-        .featured-info {
-            padding: 16px;
-        }
-
-        .featured-info h3 {
-            font-size: 21px;
-            margin: 0 0 7px;
-        }
-
-        .featured-info p {
-            margin: 0;
-            font-size: 13px;
-            line-height: 1.55;
-        }
-
-        .featured-link {
-            display: inline-block;
-            margin-top: 14px;
-            font-weight: 900;
-            font-size: 12px;
-        }
-
-        /* CREATIVE SPACE */
 
         .creative-section {
             background: var(--cream);
@@ -283,6 +288,7 @@
             display: flex;
             flex-direction: column;
             gap: 18px;
+            min-width: 0;
         }
 
         .creative-box {
@@ -306,6 +312,7 @@
             margin: 0;
             line-height: 1.5;
             font-size: 13px;
+            font-weight: 700;
         }
 
         .creative-yellow {
@@ -357,8 +364,6 @@
             transform: translate(-3px, -3px);
             box-shadow: 8px 8px 0 var(--black);
         }
-
-        /* FOOTER */
 
         .home-footer {
             background: var(--black);
@@ -423,34 +428,27 @@
             color: var(--yellow);
         }
 
-        .footer-bottom {
-            border-top: 1px solid #555;
-            padding-top: 18px;
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-            flex-wrap: wrap;
-            font-size: 11px;
-            opacity: 0.7;
-        }
+        /* TABLET */
 
-        /* RESPONSIVE */
+        @media (min-width: 551px) and (max-width: 800px) {
+            .home-hero {
+                min-height: auto;
+                padding: 165px 8% 65px;
+            }
 
-        @media (max-width: 800px) {
+            .home-hero h1 {
+                font-size: clamp(46px, 8.5vw, 68px);
+                line-height: 0.92;
+                letter-spacing: -3px;
+            }
+
             .hero-sticker {
-                width: 120px;
-                height: 120px;
-                font-size: 16px;
-                right: 8%;
-                top: 15%;
-            }
-
-            .featured-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .featured-art {
-                min-height: 190px;
+                width: 105px;
+                height: 105px;
+                font-size: 13px;
+                right: 9%;
+                top: 22px;
+                box-shadow: 5px 5px 0 var(--black);
             }
 
             .creative-grid {
@@ -458,7 +456,31 @@
             }
         }
 
+        /* mobile nya */
+
         @media (max-width: 550px) {
+            .navbar {
+                align-items: flex-start;
+                gap: 16px;
+                padding: 16px 7% 18px;
+        
+
+        }
+            .navbar .nav-links {
+                width: 100%;
+                justify-content: flex-start;
+                gap: 12px 14px;
+            }
+
+            .navbar .nav-links a,
+            .navbar .nav-links .nav-login {
+                font-size: 11px;
+            }
+
+            .navbar .nav-links .nav-login {
+                padding: 8px 10px;
+            }
+
             .brand-logo {
                 width: 34px;
                 height: 34px;
@@ -471,20 +493,43 @@
 
             .home-hero {
                 min-height: 65vh;
-                padding: 70px 7%;
+                padding: 125px 7% 55px;
             }
 
             .home-hero h1 {
-                font-size: clamp(48px, 12vw, 68px);
+                display: block !important;
+                width: 100%;
+                max-width: 100%;
+                background: transparent !important;
+                background-color: transparent !important;
+                color: var(--black) !important;
+                padding: 0 !important;
+                border: 0 !important;
+                box-shadow: none !important;
+                font-size: clamp(42px, 12vw, 68px);
+                line-height: 0.92;
                 letter-spacing: -3px;
+                overflow-wrap: anywhere;
+            }
+
+            .home-hero .eyebrow {
+                max-width: 85%;
+                font-size: 11px;
+                letter-spacing: 2px;
+            }
+
+            .home-hero .subtitle {
+                max-width: 100%;
+                font-size: 16px;
             }
 
             .hero-sticker {
-                width: 85px;
-                height: 85px;
-                font-size: 11px;
+                width: 82px;
+                height: 82px;
+                font-size: 10px;
                 right: 7%;
-                top: 12%;
+                top: 18px;
+                box-shadow: 4px 4px 0 var(--black);
             }
 
             .home-section {
@@ -494,19 +539,24 @@
             .section-heading {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 8px;
+                gap: 14px;
             }
 
-            .featured-art {
-                min-height: 175px;
+            .section-heading h2 {
+                font-size: clamp(36px, 10vw, 52px);
+            }
+
+            .section-heading > p {
+                max-width: 100%;
             }
 
             .creative-main {
-                min-height: 310px;
+                min-height: 290px;
                 padding: 22px;
             }
 
             .creative-main h2 {
+                font-size: clamp(42px, 12vw, 60px);
                 letter-spacing: -3px;
             }
 
@@ -515,11 +565,16 @@
                 padding: 19px;
             }
 
+            .creative-box h3 {
+                font-size: clamp(23px, 7vw, 27px);
+            }
+
             .statement-section {
                 padding: 60px 7%;
             }
 
             .statement-section h2 {
+                font-size: clamp(42px, 12vw, 68px);
                 letter-spacing: -3px;
             }
 
@@ -578,9 +633,9 @@
     </h1>
 
     <p class="subtitle">
-        find your way.
+        seize the day, pals
         <br>
-        seize the day, pals.
+        makes your life extraordinary!
     </p>
 
     <a href="/studios" class="view-studio">
@@ -595,62 +650,7 @@
 
 </header>
 
-<section class="home-section featured-section">
-
-    <div class="section-heading">
-        <div>
-            <p class="eyebrow">FIND YOUR WAY</p>
-            <h2>PLACES<br><span>FOR YOUR MIND</span></h2>
-        </div>
-
-        <p>
-        Every musics has it own serve, what serve you will be?
-        </p>
-    </div>
-
-    <div class="featured-grid">
-
-        <a href="/studios" class="featured-card">
-            <div class="featured-art art-band">
-                <span>BAND!</span>
-            </div>
-
-            <div class="featured-info">
-                <h3>BAND ROOM</h3>
-                <p>For the loud ones. Bring your whole band and make some noise.</p>
-                <span class="featured-link">EXPLORE ROOM ↗</span>
-            </div>
-        </a>
-
-        <a href="/studios" class="featured-card">
-            <div class="featured-art art-loop">
-                <span>LOOP.</span>
-            </div>
-
-            <div class="featured-info">
-                <h3>LOOP ROOM</h3>
-                <p>Find your rhythm, build your ideas, and create something new.</p>
-                <span class="featured-link">EXPLORE ROOM ↗</span>
-            </div>
-        </a>
-
-        <a href="/studios" class="featured-card">
-            <div class="featured-art art-beat">
-                <span>BEAT!</span>
-            </div>
-
-            <div class="featured-info">
-                <h3>BEAT ROOM</h3>
-                <p>Your own space to experiment, record, and make music.</p>
-                <span class="featured-link">EXPLORE ROOM ↗</span>
-            </div>
-        </a>
-
-    </div>
-
-</section>
-
-<!-- CREATIVE SPACE -->
+<!-- CREATIVE SECTION -->
 
 <section class="home-section creative-section">
 
@@ -661,7 +661,7 @@
         </div>
 
         <p>
-           There's something about turning the volume up and letting everything else fade away. The world keeps moving, time keeps passing, but for a moment, it's just you, your people, and the sound you're making together. Maybe life was always meant to be a little louder.
+            There's something about turning the volume up and letting everything else fade away. The world keeps moving, time keeps passing, but for a moment, it's just you, your people, and the sound you're making together. Maybe life was always meant to be a little louder.
         </p>
     </div>
 
@@ -673,7 +673,7 @@
             <h2>OPEN<br>YOUR<br>EYES</h2>
 
             <p>
-               see it beyond your eyes and your mind will follow.
+                see it beyond your eyes and your mind will follow.
             </p>
         </div>
 
@@ -735,36 +735,7 @@
             <p class="footer-description">Your Space. Your Sound.</p>
         </div>
 
-        <div class="footer-links">
-            <p class="eyebrow">EXPLORE</p>
-            <a href="/">HOME</a>
-            <a href="/studios">STUDIOS</a>
 
-            @auth
-                @if (auth()->user()->role === 'admin')
-                    <a href="/admin">ADMIN DASHBOARD</a>
-                @else
-                    <a href="/my-bookings">MY BOOKINGS</a>
-                @endif
-            @else
-                <a href="/login">LOGIN</a>
-            @endauth
-        </div>
-
-        <div class="footer-links">
-            <p class="eyebrow">ACCOUNT</p>
-
-            @auth
-                @if (auth()->user()->role === 'admin')
-                    <a href="/admin">ADMIN DASHBOARD</a>
-                @else
-                    <a href="/my-bookings">MY BOOKINGS</a>
-                @endif
-            @else
-                <a href="/login">LOGIN</a>
-                <a href="/register">REGISTER</a>
-            @endauth
-        </div>
 
     </div>
 

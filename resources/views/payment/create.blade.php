@@ -29,7 +29,6 @@
 
         <div class="payment-layout">
 
-            <!-- LEFT: BOOKING SUMMARY -->
             <section class="payment-summary">
 
                 <div class="payment-card-heading">
@@ -87,7 +86,7 @@
             </section>
 
 
-            <!-- RIGHT: PAYMENT FORM -->
+            <!-- payment -->
             <section class="payment-content">
 
                 <div class="payment-card-heading">

@@ -40,7 +40,6 @@
             font: inherit;
         }
 
-        /* SIDEBAR */
         .sidebar {
             position: fixed;
             inset: 0 auto 0 0;
@@ -171,7 +170,6 @@
             border-color: var(--black);
         }
 
-        /* MAIN CONTENT */
         .main {
             margin-left: 235px;
             padding: 34px 38px 45px;
@@ -252,7 +250,6 @@
             cursor: pointer;
             transition: .18s;
         }
-
         .button:hover {
             transform: translate(-2px, -2px);
             box-shadow: 6px 6px 0 var(--black);
@@ -493,7 +490,6 @@
         }
 
         @media (max-width: 650px) {
-            /* Sidebar tetap menempel saat konten di-scroll */
             .sidebar {
                 position: fixed;
                 inset: 0 auto 0 0;
@@ -731,8 +727,9 @@
             </p>
         </div>
 
-        <a href="/admin/studios/create" class="button">
-            ＋ ADD NEW STUDIO 
+        <a href="/admin/studios/create" class="button special-button">
+            ＋ ADD YOUR STUDIO 
+
         </a>
     </header>
 

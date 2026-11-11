@@ -71,7 +71,7 @@ class AdminStudioController extends Controller
             ->with('success', 'Studio berhasil ditambahkan!');
     }
 
-    // Menampilkan form edit studio
+    //form edit studio
     public function edit($studio_id)
     {
         $studio = DB::table('studios')
@@ -80,7 +80,7 @@ class AdminStudioController extends Controller
 
         abort_if(!$studio, 404);
 
-        // Memindahkan gambar lama ke daftar studio_images
+        // pindah gambar lama ke daftar studio_images
         if ($studio->image) {
             $hasImages = DB::table('studio_images')
                 ->where('studio_id', $studio_id)

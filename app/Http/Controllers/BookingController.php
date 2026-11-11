@@ -43,7 +43,6 @@ class BookingController extends Controller
             )
             ->get();
 
-        // Format: tanggal => daftar ID slot yang sudah terisi.
         $bookedSlotsByDate = [];
 
         foreach ($bookings as $booking) {
@@ -93,7 +92,7 @@ class BookingController extends Controller
             ]);
         }
 
-        // Slot terpilih harus berurutan tanpa jeda waktu.
+        // slot urut
         for ($i = 1; $i < $validSlots->count(); $i++) {
             $previousSlot = $validSlots[$i - 1];
             $currentSlot = $validSlots[$i];
